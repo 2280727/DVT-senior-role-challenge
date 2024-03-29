@@ -1,3 +1,4 @@
+"use client"
 import TopNav from "../ui/dashboard/topnav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -6,6 +7,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="flex-none ">
                 <TopNav/>
             </div>
+            <div className="flex-grow p-6">{children}</div>
         </div>
+
     );
 } 
