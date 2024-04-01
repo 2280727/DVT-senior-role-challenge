@@ -10,7 +10,7 @@ export const ImageTab = ( props: ImageTabProps ) => {
         <figure className='flex flex-col'>
             <Image
             key={props.key}
-            className='rounded-full' 
+            className='rounded-full w-[80px] h-[80px]' 
             src={props.imgUrl}
             width={120}
             height={120}

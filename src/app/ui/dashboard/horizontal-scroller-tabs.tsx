@@ -1,6 +1,8 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 import { ImageTab } from "./image-tab"
 import { capitalizeFirstLetter, getImage } from "@/app/lib/utils"
+import { useAtom } from "jotai";
+import { categoryAtom } from "@/app/lib/state/atoms";
 
 
 
@@ -16,8 +18,9 @@ export const HorizontalScrollerTabs: React.FC<HorizontalScrollerTabsProps> = ({
         categories,
         startIndex,
         onNext,
-        onPrev
+        onPrev,
     }) => {
+      const [ category1,setCategory ] = useAtom(categoryAtom)
     // const { categories, isLoadingCategories } = useGetCategories();
     // const [startIndex, setStartIndex] = useState(0);
   
@@ -49,11 +52,15 @@ export const HorizontalScrollerTabs: React.FC<HorizontalScrollerTabsProps> = ({
 
           <div className="flex flex-grow justify-center space-x-6">
             {categories?.slice(startIndex, startIndex + 2).map((category: string) => (
-              <ImageTab
-                key={category}
-                tabTitle={capitalizeFirstLetter(category)}
-                imgUrl={getImage(category, "cat")}
-              />
+              <button onClick={() => {setCategory(category); 
+                console.log("***",category1)
+              }}>
+                <ImageTab
+                  key={category}
+                  tabTitle={capitalizeFirstLetter(category)}
+                  imgUrl={getImage(category, "cat")}
+                />
+              </button>
             ))}
           </div>
           <button
