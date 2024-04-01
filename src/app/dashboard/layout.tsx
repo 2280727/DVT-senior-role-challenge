@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="flex-none ">
                 <TopNav/>
             </div>
-            <div className="flex-grow p-6">{children}</div>
+            <div className="flex flex-col justify-center">{children}</div>
         </div>
 
     );
