@@ -1,12 +1,13 @@
 "use client"
 import { useState } from "react";
-import { HorizontalScrollerTabs } from "../ui/dashboard/horizontal-scroller-tabs";
-import { useGetCategories } from "@/app/lib/hooks/useGetCategories";
-import { useGetProducts } from "../lib/hooks/useGetProducts";
-import { ProductCard } from "../ui/dashboard/product-card";
+import { HorizontalScrollerTabs } from "@/components/ui/dashboard/horizontal-scroller-tabs";
+import { useGetCategories } from "@/lib/hooks/useGetCategories";
+import { useGetProducts } from "@/lib/hooks/useGetProducts";
+import { ProductCard } from "@/components/ui/dashboard/product-card";
 import { useAtom } from "jotai";
-import { categoryAtom } from "../lib/state/atoms";
+import { categoryAtom } from "@/lib/state/atoms";
 import React from "react";
+import CartModal from "@/components/ui/modals/CartModal";
 
 
 
@@ -42,6 +43,7 @@ export default function Page() {
 
     return(
         <main className="">
+          <CartModal/>
             <section className="p-6">
               <h2 className="pb-4 font-bold">Preview By Category</h2>
               {!isLoadingCategories && 

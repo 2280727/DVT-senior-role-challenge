@@ -1,5 +1,5 @@
 "use client"
-import TopNav from "../ui/dashboard/topnav";
+import TopNav from "@/components/ui/dashboard/topnav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return(

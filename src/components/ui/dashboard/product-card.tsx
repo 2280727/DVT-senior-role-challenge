@@ -43,7 +43,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             onClick={() => {}}
             >
                 <BsCartPlus  className="w-8 h-8"/>
-
             </button>
         </Link>
     );

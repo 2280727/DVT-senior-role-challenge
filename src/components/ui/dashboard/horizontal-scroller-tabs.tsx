@@ -1,8 +1,8 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 import { ImageTab } from "./image-tab"
-import { capitalizeFirstLetter, getImage } from "@/app/lib/utils"
+import { capitalizeFirstLetter, getImage } from "@/lib/utils"
 import { useAtom } from "jotai";
-import { categoryAtom } from "@/app/lib/state/atoms";
+import { categoryAtom } from "@/lib/state/atoms";
 
 
 

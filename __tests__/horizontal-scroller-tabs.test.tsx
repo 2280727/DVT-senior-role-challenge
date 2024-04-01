@@ -1,6 +1,6 @@
 import {  render, screen } from '@testing-library/react'
-import { HorizontalScrollerTabs } from '../src/app/ui/dashboard/horizontal-scroller-tabs'
-import { capitalizeFirstLetter } from '@/app/lib/utils'
+import { HorizontalScrollerTabs } from '../src/components/ui/dashboard/horizontal-scroller-tabs'
+import { capitalizeFirstLetter } from '@/lib/utils'
 
 describe('HorizontalScrollerTabs', () => {
     describe('rendering', () => {
