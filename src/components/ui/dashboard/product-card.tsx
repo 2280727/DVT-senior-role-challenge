@@ -41,7 +41,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 className="w-[100%] h-[70%]"    
                 alt="Product Photo"
             />
-            <p className="px-3 mt-2 ">{product.title}</p>
+            <p className="px-3 mt-2 line-clamp-2">{product.title}</p>
             <p className="px-3 mt-4 font-bold">R{product.price}</p>
             <span className="flex px-3 mt-4 text-[12px]" >
                 <IoIosStar className="h-4 w-4 text-yellow-600"/>
