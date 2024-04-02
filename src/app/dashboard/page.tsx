@@ -55,15 +55,17 @@ export default function Page() {
                     onPrev={handlePrev}/>
                   }
             </section>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 p-6 w-screen bg-gray-100 ">
-            {!isLoadingProducts && products && Array.isArray(products) &&
-                products.map((product, i) => (
-                    <ProductCard
-                    product={product}
-                    />
-                ))
-            } 
-            </div>
+            <section className="p-6 bg-gray-100">
+              <div className="container m-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:w-[1000px]  ">
+              {!isLoadingProducts && products && Array.isArray(products) &&
+                  products.map((product, i) => (
+                      <ProductCard
+                      product={product}
+                      />
+                  ))
+              } 
+              </div>
+            </section>
         </main>
     )
 } 
