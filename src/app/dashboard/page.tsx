@@ -5,9 +5,9 @@ import { useGetCategories } from "@/lib/hooks/useGetCategories";
 import { useGetProducts } from "@/lib/hooks/useGetProducts";
 import { ProductCard } from "@/components/ui/dashboard/product-card";
 import { useAtom } from "jotai";
-import { categoryAtom } from "@/lib/state/atoms";
+import { cartItemsAtom, categoryAtom } from "@/lib/state/atoms";
 import React from "react";
-import CartModal from "@/components/ui/modals/CartModal";
+import { Product } from "@/lib/types/product";
 
 
 
@@ -20,6 +20,7 @@ export default function Page() {
     const { categories, isLoadingCategories } = useGetCategories(); 
     const { products, isLoadingProducts, refetchProducts } = useGetProducts(category);
     const [startIndex, setStartIndex] = useState(0);
+
    
     
     const handleNext = () => {
@@ -41,9 +42,9 @@ export default function Page() {
       }
     };
 
+
     return(
         <main className="">
-          <CartModal/>
             <section className="p-6">
               <h2 className="pb-4 font-bold">Preview By Category</h2>
               {!isLoadingCategories && 
@@ -58,11 +59,7 @@ export default function Page() {
             {!isLoadingProducts && products && Array.isArray(products) &&
                 products.map((product, i) => (
                     <ProductCard
-                        key={i} 
-                        imgUrl={product.image}
-                        productTitle={product.title}
-                        price={product.price}
-                        rating={product.rating}
+                    product={product}
                     />
                 ))
             } 
