@@ -18,3 +18,37 @@ export const categories: Category[] = [
         imgUrl: "/mens.jpg"
     }
 ]
+
+export const footerData = {
+    "shop": [
+      "Daily Deals",
+      "App Only Deals",
+      "Clearance Sale",
+      "Gift Vouchers",
+      "Takealot.group",
+      "Superbalist.com",
+      "Mr D"
+    ],
+    "help": [
+      "Help Centre",
+      "Contact Us",
+      "Submit an Idea",
+      "Suggest a Product",
+      "Shipping & Delivery",
+      "Takealot Pickup Points",
+      "Returns"
+    ],
+    "company": [
+      "About Us",
+      "Careers",
+      "Sell on Takealot",
+      "Deliver for Takealot",
+      "Press & News",
+      "Competitions",
+      "Terms & Conditions",
+      "Privacy Policy",
+      "Human Rights Statement",
+      "Speak Up Process",
+      "Code of Advertising Practice"
+    ]
+  }
