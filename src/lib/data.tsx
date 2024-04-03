@@ -20,7 +20,7 @@ export const categories: Category[] = [
 ]
 
 export const footerData = {
-    "shop": [
+    "Shop": [
       "Daily Deals",
       "App Only Deals",
       "Clearance Sale",
@@ -29,7 +29,7 @@ export const footerData = {
       "Superbalist.com",
       "Mr D"
     ],
-    "help": [
+    "Help": [
       "Help Centre",
       "Contact Us",
       "Submit an Idea",
@@ -38,7 +38,7 @@ export const footerData = {
       "Takealot Pickup Points",
       "Returns"
     ],
-    "company": [
+    "Company": [
       "About Us",
       "Careers",
       "Sell on Takealot",
