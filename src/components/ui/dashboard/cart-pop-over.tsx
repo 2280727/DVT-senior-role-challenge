@@ -8,10 +8,13 @@ import { useAtom } from "jotai"
 import React from "react"
 import { BsCartPlus } from "react-icons/bs"
 import { CartCard } from "./cart-card"
+import { calculateTotalPrice } from "@/lib/utils"
 
 export const CartPopOver: React.FC = () =>{
   const [cartItems ] = useAtom(cartItemsAtom)
   const [open, setOpen] = React.useState(false)
+
+
   return(
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger>
@@ -21,11 +24,21 @@ export const CartPopOver: React.FC = () =>{
         </div>
       </PopoverTrigger>
       <PopoverContent className="w-[500px]" align="end" side="bottom">
-        {cartItems.length > 0 && 
-          cartItems.map((item, i)=>(
-            <CartCard key={i} product={item}/>
-          ))
+        
+        {cartItems.length > 0 ? 
+        <div>
+          {cartItems.map((item, i)=>(
+            <CartCard key={i} product={item} last={cartItems.length - 1  === i ? true : false}/>
+          ))}
+        <p className="absolute right-8 bottom-0 font-bold p-4">Total price: R{calculateTotalPrice(cartItems)}</p>
+        </div>
+          :(
+            <section className="">
+                <h1>No items in the cart</h1>
+            </section>
+          )
         }
+
       </PopoverContent>
 
     </Popover>
