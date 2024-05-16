@@ -7,7 +7,7 @@ type ImageTabProps = {
 }
 export const ImageTab = ( props: ImageTabProps ) => {
     return(
-        <figure className='flex flex-col'>
+        <figure className='flex flex-col items-center justify-center'>
             <Image
             key={props.key}
             className='rounded-full w-[80px] h-[80px]' 
@@ -16,7 +16,7 @@ export const ImageTab = ( props: ImageTabProps ) => {
             height={120}
             alt=""
             />
-            <p className='flex justify-center'>{props.tabTitle}</p>
+            <p className=''>{props.tabTitle}</p>
          </figure>
     )
 }

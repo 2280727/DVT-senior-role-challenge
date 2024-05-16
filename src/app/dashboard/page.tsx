@@ -8,6 +8,7 @@ import { useAtom } from "jotai";
 import { cartItemsAtom, categoryAtom } from "@/lib/state/atoms";
 import React from "react";
 import { Product } from "@/lib/types/product";
+import { CardSkeleton, CategorySkeleton } from "@/components/ui/skeletons";
 
 
 
@@ -42,11 +43,18 @@ export default function Page() {
       }
     };
 
-
+    const CardList = [1,2,3,4,5,6,7,8];
     return(
         <main className="">
             <section className="p-6">
               <h2 className="pb-4 font-bold">Preview By Category</h2>
+              {isLoadingCategories &&
+                <div className="flex flex-grow justify-center space-x-6">
+                  <CategorySkeleton/>
+                  <CategorySkeleton/>
+
+                </div>
+              }
               {!isLoadingCategories && 
                 <HorizontalScrollerTabs 
                     categories={categories} 
@@ -57,6 +65,12 @@ export default function Page() {
             </section>
             <section className="p-6 bg-gray-100">
               <div className="container m-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:w-[1000px]  ">
+              {isLoadingProducts  &&
+              CardList.map((i) => (
+                  <CardSkeleton   />
+              ))
+              
+              }
               {!isLoadingProducts && products && Array.isArray(products) &&
                   products.map((product, i) => (
                       <ProductCard

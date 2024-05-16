@@ -1,5 +1,6 @@
 import { cartItemsAtom } from "@/lib/state/atoms";
 import { Product } from "@/lib/types/product"
+import clsx from "clsx";
 import { useAtom } from "jotai";
 import Image from "next/image";
 
@@ -9,15 +10,23 @@ type Rating = {
 };
 type CartCardProps ={
     product: Product
+    last?: boolean,
 }
 
 export const CartCard: React.FC<CartCardProps> =({
     product,
+    last
 }) => {
     const [cartItems, setCartItems ] = useAtom(cartItemsAtom)
     const rating: Rating = product.rating;
     return (
-        <div className="flex relative align-middle bg-white overflow-hidden w-[430px] p-4 h-[150px] border-b-2">
+        <div className={clsx(
+            'flex relative align-middle bg-white overflow-hidden w-[430px] p-4 h-[150px] ',{
+                'border-b-2': !last,
+                '': last
+            }
+            
+        )}>
             <Image
                 src={product.image}
                 width={100}
@@ -26,7 +35,7 @@ export const CartCard: React.FC<CartCardProps> =({
                 alt="Product Photo"
             />
             <section className="flex flex-col">
-                <p className="px-3 mt-2 ">{product.title}</p>
+                <p className="px-3 mt-2 line-clamp-3">{product.title}</p>
                 <p className="px-3 mt-4 font-bold">R{product.price}</p>
             </section>
             <button
