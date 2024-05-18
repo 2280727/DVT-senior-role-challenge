@@ -1,4 +1,5 @@
 import { Category } from "./types/category";
+import { project } from "./types/project";
 
 export const categories: Category[] = [
     {
@@ -17,6 +18,24 @@ export const categories: Category[] = [
         category_name: "women's clothing",
         imgUrl: "/mens.jpg"
     }
+]
+
+export const dvtSkills = [
+  "NextJS",
+  "ReactJS",
+  "TypeScript",
+  "JavaScript",
+  "Tailwind",
+]
+
+
+export const projetcs: project[] = [
+  {
+    name: 'DVT senior role Challenge',
+    webisite: '/dashboard',
+    github: 'https://github.com/2280727/DVT-senior-role-challenge',
+    stack: dvtSkills,
+  },
 ]
 
 export const footerData = {
