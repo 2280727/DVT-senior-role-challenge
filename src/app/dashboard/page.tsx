@@ -64,7 +64,7 @@ export default function Page() {
                   }
             </section>
             <section className="p-6 bg-gray-100">
-              <div className="container m-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:w-[1000px]  ">
+              <div className="container m-auto grid grid-cols-2 md:grid-cols-4 gap-4 max-md:w-[320px] md:w-[700px]">
               {isLoadingProducts  &&
               CardList.map((i) => (
                   <CardSkeleton   />

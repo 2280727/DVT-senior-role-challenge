@@ -21,7 +21,7 @@ export const CartCard: React.FC<CartCardProps> =({
     const rating: Rating = product.rating;
     return (
         <div className={clsx(
-            'flex relative align-middle bg-white overflow-hidden w-[430px] p-4 h-[150px] ',{
+            'flex relative align-middle bg-white overflow-hidden w-[90%] p-4 h-[150px] ',{
                 'border-b-2': !last,
                 '': last
             }
@@ -30,8 +30,8 @@ export const CartCard: React.FC<CartCardProps> =({
             <Image
                 src={product.image}
                 width={100}
-                height={100} 
-                className="w-[100px] h-[100px]"    
+                height={200} 
+                className="w-[70px] h-[100px] static"    
                 alt="Product Photo"
             />
             <section className="flex flex-col">
