@@ -23,7 +23,7 @@ export default function Page() {
           className='bg-gray-700 text-white p-1 mt-6'
         >EMAIL ME</button>
       </section>
-      <section id={'work_section'} className=' px-10 pt-[150px] bg-slate-300'>
+      <section id={'work_section'} className=' px-10 py-[150px] bg-slate-300'>
         <h1 className='text-[25px] mb-6 font-bold'>My Work</h1>
          <p> This portfolio showcases a collection of my personal projects,
             each accompanied by their respective Git repositories.
@@ -33,7 +33,7 @@ export default function Page() {
           </p>
 
          {projetcs.map((projetc) => (
-            <section key={projetc.name} className='pt-6 grid md:grid-cols-2 justify-between'>
+            <section key={projetc.name} className='pt-6 grid md:grid-cols-2 justify-center'>
               <div className='flex flex-col mb-6'>
                 <p className='font-bold mb-4'>{projetc.name}</p>
                 <button className='bg-gray-700 text-white md:h-[35px] p-1 mb-2'>
@@ -47,10 +47,10 @@ export default function Page() {
                   </Link>
                 </button>
               </div>
-              <div  className='md:px-5'>
+              <div  className='md:px-5 '>
                 <p className='font-bold mb-4'>STACK</p>
                 {projetc.stack.map((lang) => (
-                  <p key={lang} className='border-b-2 md:border-none '>{lang}</p>
+                  <p key={lang} className='border-b-2 max-md:text-center md:border-none '>{lang}</p>
                 ))}
 
               </div>

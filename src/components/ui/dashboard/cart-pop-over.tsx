@@ -23,7 +23,7 @@ export const CartPopOver: React.FC = () =>{
           <p>{cartItems.length}</p>
         </div>
       </PopoverTrigger>
-      <PopoverContent className="w-[500px]" align="end" side="bottom">
+      <PopoverContent className="relative w-[350px] md:w-[500px] pr-0" align="start" side="bottom">
         
         {cartItems.length > 0 ? 
         <div>

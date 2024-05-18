@@ -33,12 +33,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       const rating: Rating = product.rating;
 
     return (
-        <Link className="flex flex-col relative align-middle bg-white overflow-hidden w-[230px] p-4 h-[500px]" href={""}>
+        <Link className="flex flex-col relative align-middle bg-white overflow-hidden w-[150px] p-4 h-[340px]" href={""}>
             <Image
                 src={product.image}
                 width={200}
                 height={600} 
-                className="w-[100%] h-[70%]"    
+                className="w-[80%] h-[70%] static"    
                 alt="Product Photo"
             />
             <p className="px-3 mt-2 line-clamp-2">{product.title}</p>
