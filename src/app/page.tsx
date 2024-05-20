@@ -11,7 +11,7 @@ export default function Page() {
     <div className='h-full grid md:grid-cols-2  '>
       <section className='grid justify-center w-[100%] px-10 py-[150px] md:border-2 border-slate-300'>
         <Image
-          src={'/squ.jpg'}
+          src={'/sgidi.jpeg'} 
           className='w-[200px] mb-6 h-[200px] '
           width={700}
           height={300}
@@ -21,7 +21,7 @@ export default function Page() {
         <p className='pl-6 text-[18px] rounded-full '>Software Developer</p>
         <button
           className='bg-gray-700 text-white p-1 mt-6'
-        >EMAIL ME</button>
+        >EMAIL ME</button>  
       </section>
       <section id={'work_section'} className=' px-10 py-[150px] bg-slate-300'>
         <h1 className='text-[25px] mb-6 font-bold'>My Work</h1>
