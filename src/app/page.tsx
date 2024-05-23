@@ -34,18 +34,14 @@ export default function Page() {
 
          {projetcs.map((projetc) => (
             <section key={projetc.name} className='pt-6 grid md:grid-cols-2 justify-center'>
-              <div className='flex flex-col mb-6'>
-                <p className='font-bold mb-4'>{projetc.name}</p>
-                <button className='bg-gray-700 text-white md:h-[35px] p-1 mb-2'>
-                  <Link href={projetc.webisite}>
-                      Go now  
-                  </Link>
-                </button>
-                <button  className='bg-gray-700 text-white md:h-[35px]  p-1 '>
-                  <Link href={projetc.github}>
-                  GitHub
-                  </Link>
-                </button>
+              <div className='flex flex-col space-y-2 mb-6'>
+                <p className=' font-bold mb-4'>{projetc.name}</p>
+                <Link href={projetc.webisite} className='bg-gray-700 text-white text-center md:h-[35px]  p-1'>
+                    Go now  
+                </Link>
+                <Link  href={projetc.github } className='bg-gray-700 text-white text-center md:h-[35px]  p-1'>
+                GitHub
+                </Link>
               </div>
               <div  className='md:px-5 '>
                 <p className='font-bold mb-4'>STACK</p>
