@@ -1,4 +1,5 @@
 import { Category } from "./types/category";
+import { Product } from "./types/product";
 import { project } from "./types/project";
 
 export const categories: Category[] = [
@@ -19,6 +20,57 @@ export const categories: Category[] = [
         imgUrl: "/mens.jpg"
     }
 ]
+
+export const products: Product[] = [
+  {
+      id: 1,
+      title: "Smartphone",
+      price: 299.99,
+      description: "A high-quality smartphone with a stunning display and fast performance.",
+      category: "electronics",
+      image: "/jewelary.jpg",
+      rating: {
+          rate: 4.5,
+          count: 120
+      }
+  },
+  {
+      id: 2,
+      title: "Diamond Necklace",
+      price: 999.99,
+      description: "A beautiful diamond necklace that adds elegance to any outfit.",
+      category: "jewelry",
+      image: "/jewelary.jpg",
+      rating: {
+          rate: 4.8,
+          count: 80
+      }
+  },
+  {
+      id: 3,
+      title: "Men's T-Shirt",
+      price: 19.99,
+      description: "A comfortable and stylish men's t-shirt made from high-quality materials.",
+      category: "men's clothing",
+      image: "/jewelary.jpg",
+      rating: {
+          rate: 4.2,
+          count: 200
+      }
+  },
+  {
+      id: 4,
+      title: "Women's Dress",
+      price: 49.99,
+      description: "A fashionable women's dress perfect for any occasion.",
+      category: "women's clothing",
+      image: "/jewelary.jpg",
+      rating: {
+          rate: 4.6,
+          count: 150
+      }
+  }
+];
 
 export const dvtSkills = [
   "NextJS",
@@ -70,4 +122,5 @@ export const footerData = {
       "Speak Up Process",
       "Code of Advertising Practice"
     ]
+
   }
