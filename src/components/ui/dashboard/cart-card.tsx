@@ -35,7 +35,7 @@ export const CartCard: React.FC<CartCardProps> =({
                 alt="Product Photo"
             />
             <section className="flex flex-col">
-                <p className="px-3 mt-2 line-clamp-3">{product.title}</p>
+                <p data-testid={`product-title`} className="px-3 mt-2 line-clamp-3">{product.title}</p>
                 <p className="px-3 mt-4 font-bold">R{product.price}</p>
             </section>
             <button

@@ -1,4 +1,4 @@
-import {  render, screen } from '@testing-library/react'
+import {  fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { HorizontalScrollerTabs } from '../src/components/ui/dashboard/horizontal-scroller-tabs'
 import { capitalizeFirstLetter } from '@/lib/utils'
 
@@ -24,9 +24,7 @@ describe('HorizontalScrollerTabs', () => {
         })
         
     })
-    //TO-DO
-    //describe scrolling
-        
+    //TO-D
 
 })
 
@@ -34,8 +32,10 @@ const categoriesStr = ["electronics", "jewelery", "men's clothing", "women's clo
 const defaultProps = {
     startIndex: 0,
     onNext: () => {},
-    onPrev: () => {}
+    onPrev: () => {},
+    setCategory: jest.fn()
 } 
+
 function renderHorizontalTabs(){
     render(<HorizontalScrollerTabs categories={categoriesStr} {...defaultProps} />)
 }
