@@ -24,7 +24,8 @@ export function useGetProducts(category?: string) {
             const responce = await getProducts(category);
             return responce as Product[] ;
         }
+        
     });
 
-    return { products, isLoadingProducts, refetchProducts };
+    return { products, isLoadingProducts};
 }

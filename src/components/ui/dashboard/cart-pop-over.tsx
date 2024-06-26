@@ -17,18 +17,17 @@ export const CartPopOver: React.FC = () =>{
 
   return(
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger>
+      <PopoverTrigger data-testid="pop-over-button">
         <div className='flex'>
           <BsCartPlus  className="w-8 h-8"/>
-          <p>{cartItems.length}</p>
+          <p data-testid="cart-item-count">{cartItems.length}</p>
         </div>
       </PopoverTrigger>
-      <PopoverContent className="relative w-[350px] md:w-[500px] pr-0" align="start" side="bottom">
-        
+      <PopoverContent data-testid="pop-over-content" className="relative w-[350px] md:w-[500px] pr-0" align="start" side="bottom">
         {cartItems.length > 0 ? 
         <div>
           {cartItems.map((item, i)=>(
-            <CartCard key={i} product={item} last={cartItems.length - 1  === i ? true : false}/>
+            <CartCard key={item.id} product={item} last={cartItems.length - 1  === i ? true : false}/>
           ))}
         <p className="absolute right-8 bottom-0 font-bold p-4">Total price: R{calculateTotalPrice(cartItems)}</p>
         </div>
@@ -38,7 +37,6 @@ export const CartPopOver: React.FC = () =>{
             </section>
           )
         }
-
       </PopoverContent>
 
     </Popover>

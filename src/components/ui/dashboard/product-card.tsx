@@ -48,6 +48,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 <p>{` ${rating.rate} (${rating.count})`}</p>
             </span>
             <button
+            aria-label={`Add ${product.id}`}
             className="absolute top-[10px] right-[10px] bg-gray-100 rounded-full p-2 shadow-md shadow-gray-500 cursor-pointer"
             onClick={addToCart}
             >
