@@ -1,6 +1,7 @@
 import {  fireEvent, render, screen, waitFor } from '@testing-library/react'
-import { HorizontalScrollerTabs } from '../src/components/ui/dashboard/horizontal-scroller-tabs'
+
 import { capitalizeFirstLetter } from '@/lib/utils'
+import { HorizontalScrollerTabs } from '@/components/ui/dashboard/horizontal-scroller-tabs'
 
 describe('HorizontalScrollerTabs', () => {
     describe('rendering', () => {
