@@ -16,13 +16,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '21.6.2'
 
       - name: Install dependencies
         run: npm install
 
       - name: Run tests and generate coverage report
         run: npm test -- --coverage
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Publish coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2
