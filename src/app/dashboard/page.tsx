@@ -57,7 +57,7 @@ export default function Dashboard() {
                 {isLoadingProducts  &&
                 <div aria-label="productsLoader">
                   {CardList.map((i) => (
-                      <CardSkeleton />
+                      <CardSkeleton key={i}/>
                   ))}
                 </div>
                 }
