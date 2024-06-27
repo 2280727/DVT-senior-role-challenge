@@ -1,12 +1,28 @@
 name: 'coverage'
+
 on:
-    pull_request:
-        branches:
-            - master
-            - main
+  pull_request:
+    branches:
+      - master
+      - main
+
 jobs:
-    coverage:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - uses: ArtiomTr/jest-coverage-report-action@v2
+  coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests and generate coverage report
+        run: npm test -- --coverage
+
+      - name: Publish coverage report
+        uses: ArtiomTr/jest-coverage-report-action@v2
