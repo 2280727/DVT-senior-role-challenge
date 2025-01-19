@@ -6,6 +6,7 @@ import { useGetProducts } from "@/lib/hooks/useGetProducts";
 import { ProductCard } from "@/components/ui/dashboard/product-card";
 import React from "react";
 import { CardSkeleton, CategorySkeleton } from "@/components/ui/skeletons";
+import { ErrorScreen } from "@/components/ui/error";
 
 
 export default function Dashboard() {
@@ -53,24 +54,30 @@ export default function Dashboard() {
                {/*Need to handle error state*/}
             </section>
             <section aria-label="productsSection" className="p-6 bg-gray-100">
-              <div className="container m-auto grid grid-cols-2 md:grid-cols-4 gap-4 max-md:w-[320px] md:w-[700px]">
+
                 {isLoadingProducts  &&
-                <div aria-label="productsLoader">
+                <div className="container m-auto grid grid-cols-2 md:grid-cols-4 gap-4 max-md:w-[320px] md:w-[700px]" aria-label="productsLoader">
                   {CardList.map((i) => (
                       <CardSkeleton key={i}/>
                   ))}
                 </div>
                 }
-                {!isLoadingProducts && products && Array.isArray(products) &&
-                    products.map((product, i) => (
+                <div className="container m-auto grid grid-cols-2 md:grid-cols-4 gap-4 max-md:w-[320px] md:w-[700px]">
+                {!isLoadingProducts && products && Array.isArray(products) ?
+                   (products.map((product, i) => (
                         <ProductCard
                         key={product.id}
                         product={product}
                         />
-                    ))
-                } 
+                    )))
+                    :
+                    (
+                      <ErrorScreen/>
+                    )
+                }
+               </div>
                 {/*Need to handle error state*/}
-              </div>
+          
             </section>
         </main>
     )

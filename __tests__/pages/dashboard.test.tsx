@@ -114,6 +114,15 @@ describe('Dashboard', () => {
                 screen.getByLabelText('productsLoader');
             })
 
+        it('should display products error if no products is returned', () => {
+            mockUseGetProducts.mockImplementation(() => ({
+                products: undefined,
+                isLoadingProducts: false,
+            }));
+            renderDashboard()
+            screen.getByLabelText('productsError');
+        })
+
         it('should render products titles', () => {
             mockUseGetProducts.mockImplementation(() => ({
                 products: products,
