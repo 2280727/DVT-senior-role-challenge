@@ -39,7 +39,7 @@ jobs:
     #     urls: |
     #       http://localhost:3000
     #     uploadArtifacts: true
-    #     artifactName: lighthouse-dvt-test  # Changed from default name
+    #     artifactName: lighthouse-dvt-test  
     #     temporaryPublicStorage: true
 
 
