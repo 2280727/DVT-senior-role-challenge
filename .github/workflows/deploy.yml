@@ -39,7 +39,9 @@ jobs:
         urls: |
           http://localhost:3000
         uploadArtifacts: true
+        artifactName: lighthouse-report  # Changed from default name
         temporaryPublicStorage: true
+
 
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v2
