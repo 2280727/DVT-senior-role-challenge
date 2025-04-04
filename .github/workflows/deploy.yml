@@ -74,10 +74,11 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no \
             root@${{ secrets.SSH_HOST }} \
-            "docker pull ${{ env.DOCKER_IMAGE }} && \
+            "docker pull --platform linux/arm64/v8 ${{ env.DOCKER_IMAGE }} && \
             docker stop nextjs-app || true && \
             docker rm nextjs-app || true && \
             docker run -d \
+              --platform linux/arm64/v8 \
               --name nextjs-app \
               --restart unless-stopped \
               -p 3000:3000 \
