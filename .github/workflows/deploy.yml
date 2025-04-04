@@ -75,4 +75,4 @@ jobs:
         ssh -o StrictHostKeyChecking=no \
             root@${{ secrets.SSH_HOST }} \
             "docker pull ${{ env.DOCKER_IMAGE }} && \
-             docker-compose -f /srv/nextjs-app/docker-compose.yml up -d --force-recreate"
+             docker compose -f /srv/nextjs-app/docker-compose.yml up -d --force-recreate"
