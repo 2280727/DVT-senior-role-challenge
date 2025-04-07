@@ -21,7 +21,7 @@ export default function Page() {
         <p className='pl-6 text-[18px] rounded-full '>Software Developer</p>
         <button
           className='bg-gray-700 text-white p-1 mt-6'
-        >EMAIL ME</button>  
+        >Test CICD</button>  
       </section>
       <section id={'work_section'} className=' px-10 py-[150px] bg-slate-300'>
         <h1 className='text-[25px] mb-6 font-bold'>My Work</h1>
