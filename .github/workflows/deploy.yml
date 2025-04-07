@@ -77,5 +77,5 @@ jobs:
               --platform linux/arm64/v8 \
               --name nextjs-app \
               --restart unless-stopped \
-              -p 3000:3000 \
+              -p 8080:3000 \
               ${{ env.DOCKER_IMAGE }}"
