@@ -50,9 +50,13 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     
-    - name: Build and push Docker image
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      with:
+        driver: docker-container  # Required for cache exports
+    - name: Build and Push Docker Image
       run: |
-        docker build --platform linux/arm64/v8 -t ${{ env.DOCKER_IMAGE }} .
+        docker build --platform linux/amd64 -t ${{ env.DOCKER_IMAGE }} .
         docker push ${{ env.DOCKER_IMAGE }}
 
         
@@ -70,11 +74,10 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no \
             root@${{ secrets.SSH_HOST }} \
-            "docker pull --platform linux/arm64/v8 ${{ env.DOCKER_IMAGE }} && \
+            "docker pull ${{ env.DOCKER_IMAGE }} && \
             docker stop nextjs-app || true && \
             docker rm nextjs-app || true && \
             docker run -d \
-              --platform linux/arm64/v8 \
               --name nextjs-app \
               --restart unless-stopped \
               -p 8080:3000 \
